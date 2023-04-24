@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurman/Лучшие повара</title>
+
+    <!-- подключение цсс -->
+    <!-- <link rel="stylesheet" href="./css/povara.css"> -->
+    <!-- <link rel="stylesheet" href="./css/remone.css"> -->
+    <!-- подключение цсс -->
+
+    <!-- шрифт Schidsted Grotesk  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- шрифт Schidsted Grotesk  -->
+
+    <!-- подключение шрифта для загловков  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- подключение шрифта для загловков  -->
+</head>
+
+<body class="body">
+    <style>
+        html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/lato-v23-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+  html{
+      box-sizing: border-box 
+    }
+    *,* ::before,*::after {
+        box-sizing: inherit;
+    }
+        body{
+    font-weight:400;
+    color: #ffffff;
+}
+.body {
+    font-family: 'Schibsted Grotesk', sans-serif;
+}
+.bg {
+    background: linear-gradient(180deg, rgba(62,66,68,1) 0%, rgba(96,96,233,1) 54%, rgba(8,129,255,1) 100%);
+}
+.container{
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto ; 
+}
+.zag {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #f3f3f3;
+    font-weight: 700;
+    font-family: 'Bebas Neue', cursive;
+}
+   /* HEADER  //////////////////////////////////////////////////////*/
+    
+   .header {
+    padding: 20px 0;
+    background: linear-gradient(90deg, rgba(50,49,49,1) 0%, rgba(50,49,49,1) 100%);
+    border-bottom:1px solid #000;
+}
+.header_box {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.header_logo {
+height: 80px;
+border-radius: 20px;
+}
+.header_ul {
+padding:  0 20px;
+display: flex;
+gap: 70px;
+}
+.header_list {
+
+}
+.header_link {
+position: relative;
+text-decoration: none;
+font-size: 20px;
+font-weight: 700;
+letter-spacing:2px;
+color: #d9d9d9;
+}
+.header_link_active {
+color: #84d9f7;
+}
+.header_link:before {
+content: '';
+position: absolute;
+bottom: -5px;
+left: -6px;
+width: 110%;
+height: 3px;
+border-radius: 2px;
+background-color: #2bd1ee;
+transition: .4s;
+transform:scaleX(0);
+}
+.header_link:hover:before {
+transform:scaleX(1)
+}
+.nomer {
+    color: rgb(255, 251, 5);
+}
+/* burger_menu //////////////////////////////////////////////////////*/
+
+.burger_menu {
+display: none;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+width: 40px;
+height: 40px;
+}
+.burger_menu span {
+transition: .4s;
+position: absolute;
+width: 100%;
+height: 3px;
+background-color: #ffffff;
+transform:translate(0, 6px)
+}
+span:first-child{
+transform:translate(0, 15px)
+}
+span:last-child{
+transform:translate(0, 25px)
+}
+.activeburg span {
+transform:translateY(14px) rotate(45deg);
+}
+.activeburg span:first-child {
+transform:translate(40px, 14px);
+}
+.activeburg span:last-child{
+transform:translateY(14px) rotate(-45deg);
+}
+/* burger_menu //////////////////////////////////////////////////////*/
+
+/* попап окно  //////////////////////////////////////////////////////*/
+.popup__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.541);
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+.activePopap.popup__bg {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-postion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.popup__windows {
+    color: #000;
+    transition: .5s;
+    transform:translateY(-1000%);
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 600px;
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+.activePopap.popup__windows {
+    transform:translateY(0%);
+}
+.xxx {
+position: absolute;
+top: 10px ;
+right: 20px;
+}
+.title_popup {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #000;
+    font-weight: 700;
+    font-family: 'Bebas Neue', cursive;
+    position:relative;
+}
+.title_popup:before {
+    content:'';
+    position: absolute;
+    top: -15px;
+    left: 40%;
+    width: 20%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #000000;
+}
+.title_popup:after {
+    content:'';
+    position: absolute;
+    bottom: -15px;
+    left: 40%;
+    width: 20%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #000000;
+}
+.windows__text {
+    line-height: 20px;
+    letter-spacing:1px;
+    font-family: 'Bebas Neue', cursive;
+font-size: 18px;
+
+}
+/* попап окно  //////////////////////////////////////////////////////*/
+
+/* HEADER  //////////////////////////////////////////////////////*/
+
+/* sahpka //////////////////////////////////////////////////////*/
+
+.shapka_povar {
+    background-image:url(./img/fon_povar_shapka.jpg);
+    background-repeat:no-repeat;
+    height: 600px;
+}
+.shapka_text {
+    padding: 200px 0 0 50px ;
+    width: 500px;
+    text-align: center;
+}
+.shapka_title_povar {
+    position: relative;
+    margin-bottom: 70px;
+}
+.shapka_title_povar:before {
+    content:'';
+    position: absolute;
+    top: -20px;
+    left: 26%;
+    width: 45%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+.shapka_title_povar:after {
+    content:'';
+    position: absolute;
+    bottom: -20px;
+    left: 26%;
+    width: 45%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.shapka_sub_title_povar {
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 3px;
+}
+
+/* sahpka //////////////////////////////////////////////////////*/
+
+/* Повара и информация о них */
+.povar {
+    padding: 100px 20px 0 20px ;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex_box_povar {
+    display: flex;
+    flex-direction:column;
+    gap: 30px;
+align-items: center;
+}
+.povar_box {
+    display: flex;
+    gap: 30px;
+ align-items: center;
+    background-color: #000000c7;
+    border-radius: 20px;
+    padding: 20px;
+}
+.box_povar_imia {
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+.box_povar_text {
+    text-align: center;
+    font-size: 20px;
+}
+.box_img_povar {
+    height: 400px;
+    border-radius: 20px;
+}
+/* Повара и информация о них */
+
+
+/* footer  */
+.footer {
+
+}
+.footer_text {
+    font-size: 15px;
+    color: #000000c4;
+    letter-spacing:5px;
+    text-align: center;
+    padding: 20px;
+}
+/* footer  */
+
+@media (max-width:1000px) {
+    .burger_menu {
+        z-index: 2;
+        display: block;
+    }
+    .header_ul {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: #101200;
+    text-align: center;
+    padding: 50px 0;
+    border-radius:0 0 20px 20px;
+    transform:translateY(-100%);
+    transition: .4s;
+    z-index: 2;
+    }
+    .active.header_ul {
+        transform:translateY(0);
+    }
+    .header_link {
+        font-size: 28px;
+    }
+    .header_box {
+        justify-content: space-around;
+    } 
+    .info_flex_box {
+        flex-direction:column;
+        gap: 20px
+    }
+.sergo {
+ height: 300px;
+ width: 400px;
+}
+.box_povar_text {
+    font-size: 18px;
+}
+.box_povar_imia {
+    padding: 20px;
+}
+.povar {
+    padding: 50px 20px 0 20px ;
+}
+}
+@media (max-width:800px) {
+.povar_box {
+    flex-direction:column;
+}
+.shapka_text {
+    max-width: 500px;
+}
+}
+@media (max-width:500px) {
+    .shapka_text {
+        max-width: 400px;
+        padding: 100px 0 0 100px;
+    }
+    .shapka_povar {
+        height: 500px;
+    }
+    .popup__windows {
+        height: 400px;
+    }
+    .windows__text {
+        line-height: 18px;
+        font-size: 17px;
+    }
+}
+    </style>
+    <!-- header ///////////////////////////////////////////// -->
+    <div class="header">
+        <div class="container">
+            <div class="header_box">
+                <img src="./img/header_logo.jpg" alt="" class="header_logo">
+                <ul class="header_ul">
+                    <li class="header_list"><a class="header_link " href="./index.html">Главная</a> </li>
+                    <!-- <li class="header_list"><a class="header_link" href="">История Кухни</a></li> -->
+                    <li class="header_list"><a class="header_link header_link_active" href="#!">Лучшие Повара</a></li>
+                    <li class="header_list"><a class="header_link btn_o_nas" href="#!">О нас</a></li>
+                    <li class="header_list"><a class="header_link " href="./kontakti.html">Наши контакты</a></li>                </ul>
+                <div class="burger_menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header ///////////////////////////////////////////// -->
+
+    <div class="box_povar">
+        <div class="shapka_povar">
+            <div class="shapka_text">
+                <h1 class="shapka_title_povar zag">Лучшие повара</h1>
+                <div class="shapka_sub_title_povar">Узнайте истории лучших поваров Грузии. Как они пришли к успеху ,с
+                    чего начинали и какие достижения уже имеют на данный момент.</div>
+            </div>
+        </div>
+        <div class="bg">
+            <div class="povar">
+                <div class="flex_box_povar">
+                    <div class="povar_box">
+                        <div class="povar_text">
+                            <div class="box_povar_imia">Нуца Сургуладзе</div>
+                            <div class="box_povar_text">Нуца Сургуладзе – 20-летний повар, победительница второго сезона
+                                проекта
+                                "Мастер-шеф". Как видите, молодые повара Грузии радуют своим мастерством и желанием быть
+                                лучшими.У Нуцы Сургуладзе оказалось больше опыта, чем у предыдущей нашей героини, ведь
+                                Нуца
+                                точно знала, чего хотела. А хотела она - стать профессиональным кулинаром. Поэтому
+                                девушка
+                                решила отправиться во Францию, где начала овладевать поварским искусством в местной
+                                кулинарной
+                                школе. Параллельно с учебой девушка проходила практику в ресторанах, которые имели
+                                звезды
+                                Мишлен. Итог блестящий - Нуца тоже вернулась в Грузию и стала одним из самых
+                                оригинальных
+                                поваров на родине.</div>
+                        </div>
+                        <img class="box_img_povar" src="./img/повара/нуца Сургуладзе.jpg" alt="">
+                    </div>
+
+                    <div class="povar_box">
+                        <img class="box_img_povar" src="./img/повара/ия Дзагания.jpg" alt="">
+                        <div class="povar_text">
+                            <div class="box_povar_imia">Ия Дзагания</div>
+                            <div class="box_povar_text">Ия Дзагания – самая юная победительница реалити-шоу
+                                "Мастер-шеф", рейтингового кулинарного телеконкурса, выявляющего лучшего повара страны.
+                                В момент участия в первом сезоне проекта Ие было всего 19 лет. Но это не помешало
+                                девушке обойти более опытных конкурсантов и показать свою уникальную способность -
+                                привнести в грузинскую кухню новое оригинальное вкусовое решение.Любопытно, что
+                                заинтересовалась кулинарией Ия Дзагания, когда ей было 18 лет. Однажды Ия решила, что
+                                хочет следовать здоровому образу жизни, а питание, естественно, его неотъемлемая часть.
+                                Так девушка начала готовить, открыв для себя аппетитный мир кулинарии. К слову, Ия
+                                довольно разносторонний человек: раньше она хотела стать актрисой и даже поступила на
+                                факультет театроведения во Франции, но вскоре вернулась в Грузию и поступила на
+                                психолога.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="povar_box">
+                        <div class="povar_text">
+                            <div class="box_povar_imia">Лука Начкебия</div>
+                            <div class="box_povar_text">Лука Начкебия – лектор Кулинарной академии, самый молодой
+                                шеф-повар проекта, ему всего 29 лет, но за эти годы он успел многое. Окончил
+                                Американскую академию Гиви Залдастанишвили, в 2009 году поступил на факультет психологии
+                                ТГУ, в 2012 – начал обучение в Грузинском аграрном университете на факультете пищевых
+                                технологий.Лука считает, что интересные аспекты кулинарии кроются больше в ее научной
+                                части, нежели в самом мастерстве повара. Главной своей профессией он считает пищевые
+                                технологии, а кулинария, в свою очередь, помогает объединить науку и творчество.
+                                Хобби шеф-повара Луки Начкебия поражают: одно время он увлекается графическим дизайном,
+                                микробиологией, даже философией и автоспортом. Сейчас же главная его работа - это
+                                поварское искусство, а цель - сохранить в кулинарии богатые грузинские традиции и при
+                                этом привнести в эту культуру новые многогранные вкусовые качества.
+                            </div>
+                        </div>
+                        <img class="box_img_povar" src="./img/повара/лука начкебия.jpg" alt="">
+                    </div>
+
+                    <div class="povar_box">
+                        <img class="box_img_povar sergo" src="./img/повара/серго Авчаренко.jpg" alt="">
+                        <div class="povar_text">
+                            <div class="box_povar_imia">Серго Овчаренко</div>
+                            <div class="box_povar_text">Сергей Овчаренко - 26-летний победитель третьего сезона
+                                кулинарного проекта "Мастер-шеф". Кстати, удивительно, как кулинария, порой, может стать
+                                одновременно спасением и делом всей жизни. Дело в том, что Серго всегда мечтал стать
+                                профессиональный боксером, но из-за травмы спины в 17 лет ему пришлось забыть о большом
+                                спорте.После этого парень долго пытался найти то, что полюбит так же сильно, как спорт,
+                                и нашел. Стоит отметить, что приготовлением блюд он увлекался всегда, но кто знал, что
+                                это обернется профессией всей жизни? Сегодня Овчаренко - один из самых интересных,
+                                профессиональных и тонких новаторов-поваров.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- попап окно  -->
+            <div class="popup__bg">
+                <div class="popup-postion">
+                    <div class="popup__windows">
+                        <div class="title_popup">О нас</div>
+
+                        <p class="windows__text">Приветствуем вас на нашем сайте по. Здесь вы сможете найти популярные
+                            рецепты которые всегда хотели приготовить касающиеся Грузинской кухни.Удобно
+                            укомплектованные и
+                            в близком доступе для любой кухарки. В рецептах вы сможете найти блюдо, посмотреть видео как
+                            его
+                            готовить или почитать инструкцию у нас на сайте. Наш сайт недавно был создан и мы бы были
+                            рады
+                            любой поддержке. Делитесь этим сайтом с друзьями и приятного вам аппетита.</p>
+                        <button class="xxx">X</button>
+                    </div>
+                </div>
+            </div>
+            <!-- попап окно  -->
+
+
+            <!-- footer  -->
+            <div class="footer">
+                <div class="footer_text">
+                    &#xa9;Сайт защищен авторским правом))
+                </div>
+            </div>
+
+
+            <!-- footer  -->
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

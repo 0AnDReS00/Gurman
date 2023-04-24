@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css   -->
+    <!-- <link rel="stylesheet" href="./css/remone.css"> -->
+    <!-- <link rel="stylesheet" href="./css/kontakti.css"> -->
+    <!-- css   -->
+
+    <title>Gurman/Контакты</title>
+</head>
+
+<body>
+<style>
+    html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/lato-v23-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+  html{
+      box-sizing: border-box 
+    }
+    *,* ::before,*::after {
+        box-sizing: inherit;
+    }
+    body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight:500;
+    color: #ffffff;
+}
+.bg {
+    background: linear-gradient(180deg, rgb(62, 68, 66) 0%, rgb(36, 97, 70) 49%, rgb(24, 93, 83) 100%);
+
+}
+.container{
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto ; 
+}
+.zag {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #f3f3f3;
+    font-weight: 700;
+    font-family: 'Bebas Neue', cursive;
+}
+.number_logo {
+    text-align: center;
+    padding: 20px;
+}
+/* HEADER  //////////////////////////////////////////////////////*/
+    
+.header {
+    padding: 10px 0;
+    background: linear-gradient(90deg, rgba(50,49,49,1) 0%, rgba(50,49,49,1) 100%);
+    border-bottom:1px solid #000;
+}
+.header_box {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.header_logo {
+height: 80px;
+border-radius: 20px;
+}
+.header_ul {
+padding:  0 20px;
+display: flex;
+gap: 70px;
+}
+.header_list {
+
+}
+.header_link {
+position: relative;
+text-decoration: none;
+font-size: 20px;
+font-weight: 700;
+letter-spacing:2px;
+color: #d9d9d9;
+}
+.nomer {
+color: rgb(255, 251, 5);
+}
+.header_link_active {
+color: #f9f6ae;
+}
+.header_link:before {
+content: '';
+position: absolute;
+bottom: -5px;
+left: -6px;
+width: 110%;
+height: 3px;
+border-radius: 2px;
+background-color: #eeee2b;
+transition: .4s;
+transform:scaleX(0);
+}
+.header_link:hover:before {
+transform:scaleX(1)
+}
+
+/* попап окно  //////////////////////////////////////////////////////*/
+.popup__bg {
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.541);
+width: 100%;
+height: 100vh;
+opacity: 0;
+visibility: hidden;
+transition: .4s;
+}
+.activePopap.popup__bg {
+opacity: 1;
+visibility: visible;
+}
+.popup-postion {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.popup__windows {
+color: #000;
+transition: .5s;
+transform:translateY(-1000%);
+position: relative;
+border-radius: 20px;
+padding: 20px;
+max-width: 600px;
+height: 300px;
+background-color: #fff;
+display: flex;
+flex-direction:column;
+justify-content: space-around;
+text-align: center;
+}
+.activePopap.popup__windows {
+transform:translateY(0%);
+}
+.xxx {
+position: absolute;
+top: 10px ;
+right: 20px;
+}
+.title_popup {
+text-transform: uppercase;
+font-size: 30px;
+color: #000;
+font-weight: 700;
+font-family: 'Bebas Neue', cursive;
+position:relative;
+}
+.title_popup:before {
+content:'';
+position: absolute;
+top: -15px;
+left: 40%;
+width: 20%;
+height: 3px;
+border-radius: 2px;
+background-color: #000000;
+}
+.title_popup:after {
+content:'';
+position: absolute;
+bottom: -15px;
+left: 40%;
+width: 20%;
+height: 3px;
+border-radius: 2px;
+background-color: #000000;
+}
+.windows__text {
+line-height: 20px;
+letter-spacing:1px;
+font-family: 'Bebas Neue', cursive;
+font-size: 18px;
+
+}
+/* попап окно  //////////////////////////////////////////////////////*/
+
+
+/* burger_menu //////////////////////////////////////////////////////*/
+
+.burger_menu {
+display: none;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+width: 40px;
+height: 40px;
+}
+.burger_menu span {
+transition: .4s;
+position: absolute;
+width: 100%;
+height: 3px;
+background-color: #ffffff;
+transform:translate(0, 6px)
+}
+span:first-child{
+transform:translate(0, 15px)
+}
+span:last-child{
+transform:translate(0, 25px)
+}
+.activeburg span {
+transform:translateY(14px) rotate(45deg);
+}
+.activeburg span:first-child {
+transform:translate(40px, 14px);
+}
+.activeburg span:last-child{
+transform:translateY(14px) rotate(-45deg);
+}
+/* burger_menu //////////////////////////////////////////////////////*/
+
+/* HEADER  //////////////////////////////////////////////////////*/
+
+/* info box  */
+.box_innfo_number {}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: solid 1px #000; */
+}
+.infoo_carts {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;    
+    gap: 20px;
+}
+.box_info {
+    border: solid 2px #000000;
+    border-radius: 20px;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+.box_info_title {
+    font-weight: 700;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 500px;
+}
+.box_info_adres {
+    font-weight: 700;
+}
+.box_info_number {}
+.sait_more {
+    text-decoration: none;
+    color: #dde906;
+    font-weight: 700;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+/* info box  */
+
+
+/* footer ////////////////////////////////////////////////////// */
+.footer {
+    margin-top: 20px;
+}
+.footer_text {
+    font-size: 15px;
+    color: #fff3f3c4;
+    letter-spacing:5px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* footer ////////////////////////////////////////////////////// */
+@media (max-width:600px) {
+    .box_info_title {
+        width: 300px;
+    }
+}
+@media (max-width:950px) {
+    .burger_menu {
+        z-index: 2;
+        display: block;
+    }
+    .header_ul {
+        flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: #101200;
+    text-align: center;
+    padding: 50px 0;
+    border-radius:0 0 20px 20px;
+    transform:translateY(-100%);
+    transition: .4s;
+    z-index: 2;
+    }
+    .active.header_ul {
+        transform:translateY(0);
+    }
+    .header_link {
+        font-size: 28px;
+    }
+    .header_box {
+        justify-content: space-around;
+    } 
+    .info_flex_box {
+        flex-direction:column;
+        gap: 20px
+    }
+    .infoo-flex_text {
+        max-width: 600px;
+    }
+}
+</style>
+    <div class="bg">
+        <div class="header">
+            <div class="container">
+                <div class="header_box">
+                    <img src="./img/header_logo.jpg" alt="" class="header_logo">
+                    <ul class="header_ul">
+                        <li class="header_list"><a class="header_link header_link_active" href="./index.html">Главная</a> </li>
+                        <li class="header_list"><a  class="header_link" href="./povara.html">Лучшие
+                                Повара</a></li>
+                        <li class="header_list"><a class="header_link " href="#!">Наши контакты</a></li>
+                    </ul>
+                    <div class="burger_menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_innfo_number">
+            <h1 class="number_logo zag">Наши адреса</h1>
+            <div class="container">
+                <div class="infoo_carts">
+
+                    <div class="box_info">
+                        <div class="box_info_title">Ресторан Мимино</div>
+                        <div class="box_info_adres">Адрес: просп. Тауке хана 136, Шымкент</div>
+                        <div class="box_info_adres">Часы работы: 10:00 - 1:00</div>
+                        <div class="box_info_number">Телефон: 8 (777) 916 4292</div>
+                    </div>
+
+                    <div class="box_info">
+                        <div class="box_info_title">Арагви</div>
+                        <div class="box_info_adres">Адрес: 17мкр угл. ул Жандарбекова</div>
+                        <div class="box_info_adres">Часы работы: 10:00 - 00:00</div>
+                        <div class="box_info_number">Телефон: +7 701 273 27 63</div>
+                    </div>
+
+                    <div class="box_info">
+                        <div class="box_info_title">Ресторан Генацвале</div>
+                        <div class="box_info_adres">Адрес: Туркестанская ул. 10, Шымкент</div>
+                        <div class="box_info_adres">Часы работы: 09:00 - 1:00</div>
+                        <!-- <div class="box_info_number"> <a class="sait_more" href=" glovoapp.com, wolt.com">Сайт</a></div> -->
+                    </div>
+
+                    
+                    <div class="box_info">
+                        <div class="box_info_title">Тбилисо</div>
+                        <div class="box_info_adres">Адрес: ул. Жолдасбекова, 25, Шымкент</div>
+                        <div class="box_info_adres">Часы работы: 10:00 - 01:00</div>
+                        <div class="box_info_number">Телефон: +7 725 243 23 72</div>
+                    </div>
+                </div>
+
+
+                </div>
+
+                   
+
+
+
+                </div>
+                <!-- footer -->
+                <div class="footer">
+                    <div class="footer_text">
+                        &#xa9;Сайт защищен авторским правом))
+                    </div>
+                </div>
+                <!-- footer -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

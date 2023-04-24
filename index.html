@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- подключение цсс -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/remone.css"> -->
+    <!-- подключение цсс -->
+
+    <!-- подключение шрифта Open span -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- подключение шрифта Open span -->
+
+    <!-- подключение шрифта для загловков  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- подключение шрифта для загловков  -->
+
+    <title>Gurman</title>
+</head>
+
+<body>
+    <style>
+        html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/lato-v23-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+  html{
+      box-sizing: border-box 
+    }
+    *,* ::before,*::after {
+        box-sizing: inherit;
+    }
+    </style>
+    <div class="bg">
+        <div class="header">
+            <div class="container">
+                <div class="header_box">
+                    <img src="./img/header_logo.jpg" alt="" class="header_logo">
+                    <ul class="header_ul">
+                        <li class="header_list"><a class="header_link header_link_active" href="#!">Главная</a> </li>
+                        <!-- <li class="header_list"><a class="header_link" href="">История Кухни</a></li> -->
+                        <li class="header_list"><a class="header_link" href="./povara.html">Лучшие
+                                Повара</a></li>
+                        <li class="header_list"><a class="header_link btn_o_nas" href="#!">О нас</a></li>
+                        <li class="header_list"><a class="header_link " href="./kontakti.html">Наши контакты</a></li>
+                    </ul>
+                    <div class="burger_menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- infoo box////////////////////////////////////////////////////// -->
+        <div class="infoo_box">
+            <div class="container">
+                <div class="info_flex_box">
+                    <div class="infoo-flex_text">
+                        <div class="infoo__title zag">Лучшая грузинская кухня</div>
+                        <div class="infoo__sub_title">Рецепты которые тебе когда-то понравились, или которые ты долго не
+                            мог
+                            найти. Так же советы от наших лучших шеф поваров и тонкости приготовления. Время
+                            приготовления,
+                            нужные ингридиенты.Все это ты найдешь у нас.</div>
+                    </div>
+                    <div class=""><img class="infoo-flex__img" src="./img/кухня.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <!-- infoo box////////////////////////////////////////////////////// -->
+
+        <!-- карточки с особенностями////////////////////////////////////////////////////// -->
+        <div class="title_carts zag">Интересные факты</div>
+        <div class="box_carts">
+            <div class="flip-container">
+                <div class="flip">
+                    <div class="front">
+                        <div class="header_flip">
+                            <div class="title_front_carts">Многослойное жаркое</div>
+                        </div>
+                        <img class="img_carts" src="./img/многослоное-жаркое.jpg" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="header_flip header_flip-back">
+                            <div class="title">Многослойное жаркое</div>
+                        </div>
+                        <div class="back_texxt">
+                            Лучше всего кулинарные традиции страны иллюстрирует щедрый рецепт мясного жаркого. Для его
+                            приготовления в тушу быка кладут теленка, в теленка — барашка, в барашка — индейку, в нее —
+                            гуся, в гуся — утку, в утку — цыпленка. Место между слоями занимают пряные травы: мята,
+                            кинза,
+                            базилик, перец, чеснок. Готовят жаркое на вертеле в течение нескольких часов. Блюдо
+                            отличается
+                            непередаваемым ароматом и сочным вкусом.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-container">
+                <div class="flip">
+                    <div class="front">
+                        <div class="header_flip">
+                            <div class="title_front_carts">Необычная утварь</div>
+                        </div>
+                        <img class="img_carts" src="./img/карточка тарелка.jpg" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="header_flip header_flip-back">
+                            <div class="title">Необычная утварь</div>
+                        </div>
+                        <div class="back_texxt">
+                            Исторически в Грузии для жарки и выпекания блюд используют особую утварь — кеци. Это
+                            небольшие глиняные и крупные каменные сковороды. Кроме них используют широкие металлические
+                            емкости тапа для приготовления курицы и индейки под прессом.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flip-container">
+                <div class="flip">
+                    <div class="front">
+                        <div class="header_flip">
+                            <div class="title_front_carts">Cоусы</div>
+                        </div>
+                        <img class="img_carts" src="./img/карточка_соусы.jpg" alt="">
+                    </div>
+                    <div class="back">
+                        <div class="header_flip header_flip-back">
+                            <div class="title">Cоусы</div>
+                        </div>
+                        <div class="back_texxt">
+                            Заправки готовят на
+                            основе кислых ягодных и фруктовых соков с добавлением томатов и барбариса. Есть ореховые
+                            соусы на винном уксусе. Часто в заправки добавляют чеснок. Зелень и пряности в грузинской
+                            кухне используются не менее редко. В состав каждого соуса входят от 3–4 специй.Для
+                            приготовления заправки фруктовый сок уваривают, а компоненты перетирают в однородную пасту.
+                            Соусы получаются жидкие, ароматные и пряные.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- карточки с особенностями //////////////////////////////////////////////////////-->
+
+
+
+        <!-- меню ////////////////////////////////////////////////////// -->
+        <div class="menu_container">
+            <div class="menu_title zag">Лучшие рецепты</div>
+            <div class="menu_block">
+                <a target="_blank" class="menu_ssilka" href="./vipethka.html">
+                    <img class="img_menu" src="./img/выпечка.jpg" alt="">
+                    <div class="menu_text menu_otstup1">Мучные изделия</div>
+                </a>
+            </div>
+
+            <div class="menu_block">
+                <a class="menu_ssilka" href="./supi.html">
+                    <img class="img_menu" src="./img/супы.jpg" alt="">
+                    <div class="menu_text menu_otstup2">Супы</div>
+                </a>
+            </div>
+
+            <div class="menu_block">
+                <a class="menu_ssilka" href="./deserti.html">
+                    <img class="img_menu" src="./img/десерты.jpg" alt="">
+                    <div class="menu_text menu_otstup3">Десерты</div>
+                </a>
+            </div>
+        </div>
+        <!-- меню ////////////////////////////////////////////////////// -->
+
+
+        <!-- попап окно  -->
+        <div class="popup__bg">
+            <div class="popup-postion">
+                <div class="popup__windows">
+                    <div class="title_popup">О нас</div>
+
+                    <p class="windows__text">Приветствуем вас на нашем сайте по. Здесь вы сможете найти популярные
+                        рецепты которые всегда хотели приготовить касающиеся Грузинской кухни.Удобно укомплектованные и
+                        в близком доступе для любой кухарки. В рецептах вы сможете найти блюдо, посмотреть видео как его
+                        готовить или почитать инструкцию у нас на сайте. Наш сайт недавно был создан и мы бы были рады
+                        любой поддержке. Делитесь этим сайтом с друзьями и приятного вам аппетита.</p>
+                    <button class="xxx">X</button>
+                </div>
+            </div>
+        </div>
+        <!-- попап окно  -->
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_text">
+                &#xa9;Сайт защищен авторским правом))
+            </div>
+        </div>
+        <!-- footer -->
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

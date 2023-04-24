@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- подключение шрифта Open span -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- подключение шрифта Open span -->
+
+    <!-- подключение шрифта для загловков  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- подключение шрифта для загловков  -->
+
+
+    <!-- подключение цсс  -->
+    <!-- <link rel="stylesheet" href="/css/remone.css"> -->
+    <!-- <link rel="stylesheet" href="/css/deserti.css"> -->
+    <!-- подключение цсс  -->
+    <title>Gurman/Десерты</title>
+</head>
+
+<body>
+    <style>
+        html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/lato-v23-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        }
+  html{
+      box-sizing: border-box 
+    }
+    *,* ::before,*::after {
+        box-sizing: inherit;
+    }
+        body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight:500;
+    color: #ffffff;
+}
+.zag {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #f3f3f3;
+    font-weight: 700;
+    font-family: 'Bebas Neue', cursive;
+}
+.bg {
+    background: linear-gradient(180deg, rgba(68,68,62,1) 0%, rgba(113,47,100,1) 49%, rgba(255,8,216,1) 100%);
+}
+.container{
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto ; 
+}
+
+/* HEADER  //////////////////////////////////////////////////////*/
+    
+ .header {
+    padding: 20px 0;
+    background: linear-gradient(90deg, rgba(50,49,49,1) 0%, rgba(50,49,49,1) 100%);
+    border-bottom:1px solid #000;
+}
+.header_box {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.header_logo {
+height: 80px;
+border-radius: 20px;
+}
+.header_ul {
+padding:  0 20px;
+display: flex;
+gap: 70px;
+}
+.header_list {
+
+}
+.header_link {
+position: relative;
+text-decoration: none;
+font-size: 20px;
+font-weight: 700;
+letter-spacing:2px;
+color: #d9d9d9;
+}
+.nomer {
+color: rgb(252, 28, 233);
+}
+.header_link_active {
+color: #f9f6ae;
+}
+.header_link:before {
+content: '';
+position: absolute;
+bottom: -5px;
+left: -6px;
+width: 110%;
+height: 3px;
+border-radius: 2px;
+background-color: #ee2bd1;
+transition: .4s;
+transform:scaleX(0);
+}
+.header_link:hover:before {
+transform:scaleX(1)
+}
+
+/* попап окно  //////////////////////////////////////////////////////*/
+.popup__bg {
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.541);
+width: 100%;
+height: 100vh;
+opacity: 0;
+visibility: hidden;
+transition: .4s;
+}
+.activePopap.popup__bg {
+opacity: 1;
+visibility: visible;
+}
+.popup-postion {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.popup__windows {
+color: #000;
+transition: .5s;
+transform:translateY(-1000%);
+position: relative;
+border-radius: 20px;
+padding: 20px;
+max-width: 600px;
+height: 300px;
+background-color: #fff;
+display: flex;
+flex-direction:column;
+justify-content: space-around;
+text-align: center;
+}
+.activePopap.popup__windows {
+transform:translateY(0%);
+}
+.xxx {
+position: absolute;
+top: 10px ;
+right: 20px;
+}
+.title_popup {
+text-transform: uppercase;
+font-size: 30px;
+color: #000;
+font-weight: 700;
+font-family: 'Bebas Neue', cursive;
+position:relative;
+}
+.title_popup:before {
+content:'';
+position: absolute;
+top: -15px;
+left: 40%;
+width: 20%;
+height: 3px;
+border-radius: 2px;
+background-color: #000000;
+}
+.title_popup:after {
+content:'';
+position: absolute;
+bottom: -15px;
+left: 40%;
+width: 20%;
+height: 3px;
+border-radius: 2px;
+background-color: #000000;
+}
+.windows__text {
+line-height: 20px;
+letter-spacing:1px;
+font-family: 'Bebas Neue', cursive;
+font-size: 18px;
+
+}
+/* попап окно  //////////////////////////////////////////////////////*/
+
+
+/* burger_menu //////////////////////////////////////////////////////*/
+
+.burger_menu {
+display: none;
+cursor:pointer;
+position:relative;
+overflow:hidden;
+width: 40px;
+height: 40px;
+}
+.burger_menu span {
+transition: .4s;
+position: absolute;
+width: 100%;
+height: 3px;
+background-color: #ffffff;
+transform:translate(0, 6px)
+}
+span:first-child{
+transform:translate(0, 15px)
+}
+span:last-child{
+transform:translate(0, 25px)
+}
+.activeburg span {
+transform:translateY(14px) rotate(45deg);
+}
+.activeburg span:first-child {
+transform:translate(40px, 14px);
+}
+.activeburg span:last-child{
+transform:translateY(14px) rotate(-45deg);
+}
+/* burger_menu //////////////////////////////////////////////////////*/
+
+/* HEADER  //////////////////////////////////////////////////////*/
+
+/* box vipethka  //////////////////////////////////////////////////////*/
+.box {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.box_vipethka {
+}
+.title_box_bipethka {
+    text-align: center;
+    padding: 40px;
+}
+.flex_box_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 50px;
+    flex-wrap:wrap;
+}
+.karts_menu {
+    text-align: center;
+    border: solid 1px #000;
+    background-color: #000000c2;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 400px;
+    height: 700px;
+display: flex;
+flex-direction:column;
+justify-content: space-between;
+}
+.title_karts {
+    text-align: center;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    padding: 15px;
+}
+
+.img_karts_menu {
+    height: 230px;
+    border-radius: 20px;
+
+}
+.karts_opisanie {
+font-size: 15px;
+text-align: center;
+padding: 10px;
+}
+.karts_menu_list {
+    text-align: center;
+    line-height: 18px;
+    font-size: 13px;
+}
+.karts_menu_link {
+}
+.karts_menu_link span{
+    padding: 5px;
+    font-weight: 700;
+}
+.karts_menu_link_portsia {
+    font-size: 18px;
+    font-weight: 700;
+    padding:5px ;
+}
+.karts_menu_more {
+    text-decoration: none;
+    color: #fff;
+    background-color: #f10909;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: .3s;
+}
+.karts_menu_more:hover {
+    background-color: #b90202;
+}
+/* box vipethka  //////////////////////////////////////////////////////*/
+/* footer /////////////////// */
+
+
+.footer {
+    margin-top: 20px;
+}
+.footer_text {
+    font-size: 15px;
+    color: #000000c4;
+    letter-spacing:5px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* footer /////////////////// */
+
+
+@media (max-width:1000px) {
+    .burger_menu {
+        z-index: 2;
+        display: block;
+    }
+    .header_ul {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: #101200;
+    text-align: center;
+    padding: 50px 0;
+    border-radius:0 0 20px 20px;
+    transform:translateY(-100%);
+    transition: .4s;
+    z-index: 2;
+    }
+    .active.header_ul {
+        transform:translateY(0);
+    }
+    .header_link {
+        font-size: 28px;
+    }
+    .header_box {
+        justify-content: space-around;
+    } 
+    .info_flex_box {
+        flex-direction:column;
+        gap: 20px
+    }
+    .infoo-flex_text {
+        max-width: 600px;
+    }
+}
+    </style>
+    <div class="bg">
+        <div class="header">
+            <div class="container">
+                <div class="header_box">
+                    <img src="./img/header_logo.jpg" alt="" class="header_logo">
+                    <ul class="header_ul">
+                        <li class="header_list"><a class="header_link " href="./index.html">Главная</a> </li>
+                        <!-- <li class="header_list"><a class="header_link" href="">История Кухни</a></li> -->
+                        <li class="header_list"><a target="_blank" class="header_link" href="./povara.html">Лучшие
+                                Повара</a></li>
+                        <li class="header_list"><a class="header_link btn_o_nas" href="#!">О нас</a></li>
+                        <li class="header_list"><a class="header_link " href="./kontakti.html">Наши контакты</a></li>                    </ul>
+                    <div class="burger_menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- box vipethka  -->
+        <div class="box">
+            <div class="box_vipethka">
+                <h1 class="title_box_bipethka zag">Лучшие сладоти и десерты</h1>
+                <div class="flex_box_menu">
+
+                    <div class="karts_menu">
+                        <div class="title_karts">Гозинаки</div>
+                        <div class="box_img">
+                            <img class="img_karts_menu" src="./img/десерты/гозинак.jpg" alt="">
+                        </div>
+                        <p class="karts_opisanie">Традиционные грузинские гозинаки делают из грецкого ореха с медом.
+                            Орехи обжаривают на сковороде, мед растапливают на водяной бане. Для дополнительной
+                            клейкости добавляют пару ложек сахара.</p>
+                        <ul class="karts_menu_list">
+                            <li class="karts_menu_link">Орехи <span>По вкусу</span> </li>
+                            <li class="karts_menu_link">Мед<span>По вкусу</span></li>
+                            <li class="karts_menu_link">Сахар <span>По вкусу</span></li>
+                            <li class="karts_menu_link_portsia">? порции</li>
+                        </ul>
+                        <a target="_blank" class="karts_menu_more"
+                            href="https://www.youtube.com/watch?v=RPbX6tdDiLY">Видео</a>
+                    </div>
+
+
+                    <div class="karts_menu">
+                        <div class="title_karts">Пеламуши</div>
+                        <div class="box_img">
+                            <img class="img_karts_menu" src="./img/десерты/пеламуши.jpg" alt="">
+                        </div>
+                        <p class="karts_opisanie">Эту сладость можно отнести к группе фруктовых желе. Вкус очень
+                            насыщенный, нежный, сочный. Дети будут в восторге от пеламуши на новогоднем столе, да и
+                            взрослые не обойдут вниманием этот необычный десерт.</p>
+                        <ul class="karts_menu_list">
+                            <li class="karts_menu_link">Виноградный сок <span>1 л</span> </li>
+                            <li class="karts_menu_link">кукурузная мука<span>100 гр</span></li>
+                            <li class="karts_menu_link">сахар<span>1-2 с.л</span></li>
+                            <li class="karts_menu_link">грецкие орехи<span> дял подачи</span></li>
+                            <li class="karts_menu_link_portsia">4 порции</li>
+                        </ul>
+                        <a target="_blank" class="karts_menu_more"
+                            href="https://www.youtube.com/watch?v=B9uamANtHzsE">Видео</a>
+                    </div>
+
+
+                    <div class="karts_menu">
+                        <div class="title_karts">Чурчхела</div>
+                        <div class="box_img">
+                            <img class="img_karts_menu" src="./img/десерты/чурчхела.jpg" alt="">
+                        </div>
+                        <p class="karts_opisanie">урчхéла — традиционное грузинское национальное лакомство: очищенные от
+                            скорлупы и нанизанные на нитку орехи (как правило, грецкие) в загущённых мукой соках.</p>
+                        <ul class="karts_menu_list">
+                            <li class="karts_menu_link">Апельсиновый сок <span> 1500 мл</span> </li>
+                            <li class="karts_menu_link">Гранатовый сок<span>1500 мл</span></li>
+                            <li class="karts_menu_link">грецкий орех<span> 150 гр</span></li>
+                            <li class="karts_menu_link">фундук<span>150гр</span></li>
+                            <li class="karts_menu_link">мука пшеничная<span>300 гр</span> </li>
+                            <li class="karts_menu_link_portsia">12 порции</li>
+                        </ul>
+                        <a target="_blank" class="karts_menu_more"
+                            href="https://www.youtube.com/watch?v=RXp-EzR_5rM">Видео</a>
+                    </div>
+
+
+                    <div class="karts_menu">
+                        <div class="title_karts">Тклапи — пастила по-грузински</div>
+                        <div class="box_img">
+                            <img class="img_karts_menu" src="./img/десерты/Тклапи.jpg" alt="">
+                        </div>
+                        <p class="karts_opisanie">Тклапи – традиционное блюдо грузинской кухни. Тклапи представляет
+                            собой тонкий фруктовый лаваш или пастилу из фруктового пюре, высушенного на солнце.
+                            Традиционно грузинскую пастилу или тклапи делают из кислой алычи. Также тклапи делают из
+                            других видов слив, кизила или других фруктов, в том числе экзотических.</p>
+                        <ul class="karts_menu_list">
+                            <li class="karts_menu_link">Алыча <span>2 кг</span> </li>
+                            <li class="karts_menu_link">Сахар<span>100гр.</span></li>
+                            <li class="karts_menu_link">Растительное масло<span>для смазки</span></li>
+                            <li class="karts_menu_link_portsia">? порции</li>
+                        </ul>
+                        <a target="_blank" class="karts_menu_more"
+                            href="https://www.youtube.com/watch?v=8Uh9w2M4Z6w">Видео</a>
+                    </div>
+
+
+                    <div class="karts_menu">
+                        <div class="title_karts">Чири</div>
+                        <div class="box_img">
+                            <img class="img_karts_menu" src="./img/десерты/чили.jpg" alt="">
+                        </div>
+                        <p class="karts_opisanie">Популярный десерт грузинской кухни — чири (вяленая хурма). Очень
+                            простой рецепт приготовления. Спешите забрать его в свою кулинарную копилку.</p>
+                        <ul class="karts_menu_list">
+                            <li class="karts_menu_link">Хурма <span>2-3 кг</span> </li>
+                            <li class="karts_menu_link">Плотные нитки<span></span></li>
+                            <li class="karts_menu_link">Солнечная погода и легкий ветер<span></span></li>
+                            <li class="karts_menu_link_portsia">? порции</li>
+                        </ul>
+                        <a target="_blank" class="karts_menu_more"
+                            href="https://www.youtube.com/watch?v=7U9-B7RDD34">Видео</a>
+                    </div>
+
+
+                    <div class="karts_menu">
+                        <div class="title_karts">Лечери</div>
+                        <div class="box_img">
+                            <img class="img_karts_menu" src="./img/десерты/лечери.jpg" alt="">
+                        </div>
+                        <p class="karts_opisanie">Действительно необычное блюдо, которое стоит попробовать. Это десерт
+                            из тыквы и риса с виноградным соком.</p>
+                        <ul class="karts_menu_list">
+                            <li class="karts_menu_link">Сок<span>700 мл</span> </li>
+                            <li class="karts_menu_link">Тыква<span>450 г</span></li>
+                            <li class="karts_menu_link">Рис<span>120 г</span></li>
+                            <li class="karts_menu_link">Сахар<span>по желанию</span></li>
+                            <li class="karts_menu_link_portsia">6 порции</li>
+                        </ul>
+                        <a target="_blank" class="karts_menu_more"
+                            href="https://www.povarenok.ru/recipes/show/60234/">Видео</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- box vipethka  -->
+
+            <!-- footer -->
+            <div class="footer">
+                <div class="footer_text">
+                    &#xa9;Сайт защищен авторским правом))
+                </div>
+            </div>
+            <!-- footer -->
+
+            <!-- попап окно  -->
+            <div class="popup__bg">
+                <div class="popup-postion">
+                    <div class="popup__windows">
+                        <div class="title_popup">О нас</div>
+
+                        <p class="windows__text">Приветствуем вас на нашем сайте по. Здесь вы сможете найти популярные
+                            рецепты которые всегда хотели приготовить касающиеся Грузинской кухни.Удобно
+                            укомплектованные и
+                            в близком доступе для любой кухарки. В рецептах вы сможете найти блюдо, посмотреть видео как
+                            его
+                            готовить или почитать инструкцию у нас на сайте. Наш сайт недавно был создан и мы бы были
+                            рады
+                            любой поддержке. Делитесь этим сайтом с друзьями и приятного вам аппетита.</p>
+                        <button class="xxx">X</button>
+                    </div>
+                </div>
+            </div>
+            <!-- попап окно  -->
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
